@@ -27,10 +27,11 @@ module.exports = (app, path) => {
         })
         Item.save().then(data=>{
           console.log('Success')
+          res.send({success:true})
         }).catch(err=>{
-            console.log(err)
+            throw err
         })
-        res.send({success:true})
+        
         // console.log(req.body.item)
         // data.push(req.body.item)
         // res.send(data);
@@ -42,13 +43,13 @@ module.exports = (app, path) => {
 
         Wish.findOneAndDelete({wish:req.params.id}).then(data=>{
             console.log('deleted')
+            res.send({hello :'man'})
         })
         // const newData=data.filter((dat)=>{
         //     return dat!=req.params.id
         // })
         // data=newData
         // console.log('ara h ',req.params.id)
-        res.send({hello :'man'})
     })
 
     app.all('*', (req, res) => {
