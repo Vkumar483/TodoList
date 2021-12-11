@@ -1,4 +1,3 @@
-const { urlencoded } = require('body-parser');
 const bodyParser = require('body-parser');
 const express=require('express')
 const port=process.env.port ||5000
